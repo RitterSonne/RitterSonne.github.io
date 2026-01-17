@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>TINY+ Compiler | RitterSonne</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Estilos -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <style>
+    /* Ajuste para que el menú no tape el contenido */
+    main {
+        margin-top: 100px;
+    }
+
+    .project-content {
+      background: var(--surface-color);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+    }
+    
+    .project-content h2 { 
+      margin-top: 40px; 
+      margin-bottom: 20px;
+      color: var(--accent-color); 
+      font-weight: 700;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      padding-bottom: 10px;
+    }
+    
+    .project-content h3 { 
+      margin-top: 25px; 
+      font-size: 1.3rem;
+      color: var(--heading-color); 
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-content h3 i { color: var(--accent-color); }
+
+    .tech-tag { 
+      background: color-mix(in srgb, var(--accent-color), transparent 90%); 
+      padding: 5px 12px; 
+      border-radius: 20px; 
+      color: var(--accent-color); 
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin: 3px;
+    }
+
+    .status-badge {
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    /* Colores específicos para badges de este proyecto */
+    .bg-java { background-color: #E76F00; }   /* Naranja Java */
+    .bg-jflex { background-color: #0d6efd; }  /* Azul */
+    .bg-cup { background-color: #198754; }    /* Verde */
+    .bg-tm { background-color: #6c757d; }     /* Gris */
+
+    .code-box {
+        background-color: rgba(0,0,0,0.2);
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        color: var(--default-color);
+        border-left: 4px solid var(--accent-color);
+        overflow-x: auto;
+        white-space: pre-wrap;
+        font-size: 0.9rem;
+    }
+
+    /* Estilo especial para código fuente coloreado simple */
+    .code-syntax {
+        color: #d63384; /* Rosa para keywords */
+    }
+
+    .project-content ul { padding-left: 20px; }
+    .project-content ul li { margin-bottom: 8px; color: var(--default-color); }
+
+    /* Ajustes modo claro */
+    body.light-mode .project-content {
+        background: #ffffff;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    body.light-mode .code-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 4px solid var(--accent-color);
+    }
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+  <!-- HEADER -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">RitterSonne</h1>
+      </a>
+      <a class="btn-getstarted" href="index.html#portfolio">Volver al Portafolio</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Título Principal -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Compilador TINY+</h1>
+        <p>Extensión procedural y manejo de arreglos para el lenguaje educativo TINY</p>
+        <div class="mt-3">
+            <span class="status-badge bg-java">Java 100%</span>
+            <span class="status-badge bg-jflex">Lexer: JFlex</span>
+            <span class="status-badge bg-cup">Parser: JavaCUP</span>
+            <span class="status-badge bg-tm">Target: Tiny Machine</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido del Proyecto -->
+    <section class="section">
+      <div class="container">
+        <div class="project-content">
+            
+            <p class="lead">
+                Este proyecto es un compilador robusto desarrollado en <strong>Java</strong> para una versión extendida del lenguaje TINY. Implementa todas las fases de compilación (Análisis Léxico, Sintáctico y Semántico) y genera código ensamblador funcional para la <strong>Tiny Machine (TM)</strong>. Soporta características avanzadas como recursividad, arreglos, funciones con retorno y gestión dinámica de ámbitos.
+            </p>
+
+            <h2><i class="bi bi-cpu"></i> Arquitectura y Características</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-memory"></i> Gestión de Memoria y Ámbitos</h3>
+                    <ul>
+                        <li><strong>Shadowing:</strong> Manejo de variables locales y globales con el mismo nombre sin conflictos.</li>
+                        <li><strong>Stack Frames:</strong> Reserva y liberación dinámica de memoria (EntrarAmbito/SalirAmbito) para soportar recursividad.</li>
+                        <li><strong>Symbol Table:</strong> Implementación mediante una Pila de HashMaps.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-grid-3x3"></i> Arreglos (Arrays)</h3>
+                    <ul>
+                        <li><strong>Declaración:</strong> Reserva de bloques contiguos en memoria global (GP).</li>
+                        <li><strong>Acceso Dinámico:</strong> Cálculo de direcciones en tiempo de ejecución: <code>DirecciónBase + Offset(i)</code>.</li>
+                        <li><strong>Nodos AST:</strong> Nodos específicos para asignación y lectura de vectores.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-magic"></i> Syntactic Sugar & Rewriting</h3>
+                    <ul>
+                        <li><strong>Bucle FOR:</strong> El parser transforma internamente el <code>for</code> en una estructura equivalente <code>Bloque -> Asignación -> Repeat -> If</code>.</li>
+                        <li><strong>Lowering:</strong> Reduce la complejidad del backend reutilizando la lógica del bucle REPEAT ya probada.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-diagram-3"></i> Soporte Procedural</h3>
+                    <ul>
+                        <li><strong>Funciones:</strong> Definición, llamadas y retorno de valores.</li>
+                        <li><strong>Control de Flujo:</strong> Gestión de saltos (JNE) y guardado del Program Counter (PC) para el retorno de subrutinas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-code-square"></i> Sintaxis del Lenguaje</h2>
+            <p>El compilador soporta una sintaxis similar a Pascal. Aquí un ejemplo real:</p>
+            <div class="code-box">
+{ Declaración de Arreglos }
+var lista[5];
+
+{ Declaración de Funciones }
+fun suma(a, b)
+    return a + b;
+endf
+
+{ Bloque Principal }
+x := 0;
+read x;
+
+if x > 0 then
+    { Bucle For (Transformado internamente) }
+    for i := 0 to 10 do
+        lista[i] := suma(x, i);
+        write lista[i];
+    end
+else
+    write 0;
+end
+            </div>
+
+            <h2><i class="bi bi-layers"></i> Tecnologías Utilizadas</h2>
+            <div>
+                <span class="tech-tag">Java 8+</span>
+                <span class="tech-tag">JFlex</span>
+                <span class="tech-tag">JavaCUP</span>
+                <span class="tech-tag">Assembly (TM)</span>
+                <span class="tech-tag">AST (Composite Pattern)</span>
+                <span class="tech-tag">PowerShell</span>
+            </div>
+
+            <h2><i class="bi bi-folder2-open"></i> Estructura del Proyecto</h2>
+            <div class="code-box">
+Compilador/
+├── analizadores/       -> Especificaciones .flex y .cup.
+├── src/
+│   ├── nodosAST/       -> Clases del Árbol Sintáctico (Composite).
+│   │   ├── NodoFor.java          -> Lógica de transformación.
+│   │   ├── NodoFuncionDecl.java  -> Estructura de funciones.
+│   ├── Registros/      -> Metadatos para la Tabla de Símbolos.
+│   ├── Generador.java  -> Backend: Emisión de código TM.
+│   ├── TablaSimbolos.java -> Pila de ámbitos.
+│   └── App.java        -> Driver principal.
+├── lib/                -> Dependencias (java-cup-11b.jar).
+└── Analist.ps1         -> Script de Build automatizado.
+            </div>
+
+            <h2><i class="bi bi-terminal"></i> Compilación y Ejecución</h2>
+            
+            <h3>1. Generar Analizadores (Script)</h3>
+            <div class="code-box">
+./Analist.ps1
+            </div>
+
+            <h3>2. Compilar Fuentes Java</h3>
+            <div class="code-box">
+javac -cp "lib/java-cup-11b.jar" -d bin src/*.java src/nodosAST/*.java src/Registros/*.java
+            </div>
+
+            <h3>3. Ejecutar Compilador</h3>
+            <div class="code-box">
+# Genera el archivo CodigoTiny.tiny
+java -cp "bin;lib/java-cup-11b.jar" App test.tny
+            </div>
+
+            <hr class="mt-5 mb-4">
+            
+            <div class="text-center text-muted fst-italic">
+                <p>"Un compilador es un programa que traduce un programa escrito en un lenguaje fuente a un programa equivalente en otro lenguaje objeto." - Aho, Lam, Sethi, Ullman</p>
+                <p class="small">Proyecto de Cátedra UNET - Desarrollado por Jose G. Briceño & Francisco J. Sanchez</p>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">RitterSonne</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // Recuperar el tema seleccionado
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+
+</body>
+</html>

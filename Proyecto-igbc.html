@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portal IGBC | RitterSonne</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Estilos -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <style>
+    /* Ajuste para que el menú no tape el contenido */
+    main {
+        margin-top: 100px;
+    }
+
+    .project-content {
+      background: var(--surface-color);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+    }
+    
+    .project-content h2 { 
+      margin-top: 40px; 
+      margin-bottom: 20px;
+      color: var(--accent-color); 
+      font-weight: 700;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      padding-bottom: 10px;
+    }
+    
+    .project-content h3 { 
+      margin-top: 25px; 
+      font-size: 1.3rem;
+      color: var(--heading-color); 
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-content h3 i { color: var(--accent-color); }
+
+    .tech-tag { 
+      background: color-mix(in srgb, var(--accent-color), transparent 90%); 
+      padding: 5px 12px; 
+      border-radius: 20px; 
+      color: var(--accent-color); 
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin: 3px;
+    }
+
+    .status-badge {
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    /* Colores específicos para badges de este proyecto */
+    .bg-maui { background-color: #512bd4; }   /* Morado .NET MAUI */
+    .bg-platform { background-color: #0d6efd; } /* Azul */
+    .bg-active { background-color: #198754; }   /* Verde */
+
+    .code-box {
+        background-color: rgba(0,0,0,0.2);
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        color: var(--default-color);
+        border-left: 4px solid var(--accent-color);
+        overflow-x: auto;
+        white-space: pre-wrap; /* Para que el código largo baje de línea */
+    }
+
+    .project-content ul { padding-left: 20px; }
+    .project-content ul li { margin-bottom: 8px; color: var(--default-color); }
+
+    /* Ajustes modo claro */
+    body.light-mode .project-content {
+        background: #ffffff;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    body.light-mode .code-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 4px solid var(--accent-color);
+    }
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+  <!-- HEADER -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">RitterSonne</h1>
+      </a>
+      <a class="btn-getstarted" href="index.html#portfolio">Volver al Portafolio</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Título Principal -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Portal IGBC - App de Gestión</h1>
+        <p>Aplicación móvil multiplataforma para la gestión integral de ventas y administración</p>
+        <div class="mt-3">
+            <span class="status-badge bg-maui">.NET MAUI 8.0</span>
+            <span class="status-badge bg-platform">Android | iOS | Windows</span>
+            <span class="status-badge bg-active">Estado: Activo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido del Proyecto -->
+    <section class="section">
+      <div class="container">
+        <div class="project-content">
+            
+            <p class="lead">
+                <strong>AndroidAppIGBC (Portal IGBC)</strong> es una aplicación móvil robusta desarrollada con <strong>.NET MAUI</strong> (.NET 8). Implementa una arquitectura <strong>MVVM</strong> y gestiona múltiples roles de usuario (Vendedor, Aprobador, Administrador) para cubrir todo el ciclo de venta, desde la toma del pedido hasta su aprobación y análisis.
+            </p>
+
+            <h2><i class="bi bi-stars"></i> Características Principales</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-shield-lock"></i> Seguridad y Autenticación</h3>
+                    <ul>
+                        <li><strong>Login seguro:</strong> Autenticación basada en JWT Tokens.</li>
+                        <li><strong>Roles Dinámicos:</strong> Navegación personalizada (Shells separados) según si es Admin, Vendedor o Aprobador.</li>
+                        <li><strong>Sesión:</strong> Cierre de sesión automático ante credenciales revocadas.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-cart4"></i> Módulo de Vendedor</h3>
+                    <ul>
+                        <li><strong>Catálogo:</strong> Visualización optimizada con caché de imágenes (FFImageLoading).</li>
+                        <li><strong>Carrito:</strong> Validación de stock en tiempo real.</li>
+                        <li><strong>Offline:</strong> Base de datos local (SQLite) para gestión de clientes sin conexión.</li>
+                        <li><strong>Historial:</strong> Estado de cuenta y cobranza.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-check-circle"></i> Módulo de Aprobador</h3>
+                    <ul>
+                        <li><strong>Dashboard:</strong> Métricas de pedidos pendientes.</li>
+                        <li><strong>Revisión:</strong> Detalle profundo de cada pedido.</li>
+                        <li><strong>Acciones:</strong> Editar, Aprobar o Rechazar pedidos en tiempo real.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-bar-chart-line"></i> Módulo de Administrador</h3>
+                    <ul>
+                        <li><strong>Dashboard Global:</strong> Estadísticas de ventas y cuentas por cobrar.</li>
+                        <li><strong>Fuerza de Ventas:</strong> Monitoreo de ubicación y desempeño de vendedores activos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3><i class="bi bi-broadcast"></i> Tecnología y Servicios Avanzados</h3>
+            <ul>
+                <li><strong>Notificaciones Push:</strong> Integración completa con Firebase Cloud Messaging.</li>
+                <li><strong>Tiempo Real (SignalR):</strong> Actualizaciones inmediatas de estado de pedidos y alertas.</li>
+                <li><strong>Segundo Plano:</strong> Servicios para monitoreo de stock mientras se crea el pedido.</li>
+            </ul>
+
+            <h2><i class="bi bi-code-slash"></i> Stack Tecnológico</h2>
+            <div>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">.NET MAUI 8.0</span>
+                <span class="tech-tag">MVVM</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">SignalR</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">FFImageLoading</span>
+            </div>
+
+            <h2><i class="bi bi-gear-wide-connected"></i> Configuración</h2>
+            
+            <h3>Prerrequisitos</h3>
+            <ul>
+                <li>Visual Studio 2022 (Workload .NET MAUI).</li>
+                <li>.NET 8.0 SDK.</li>
+                <li>Emulador Android o dispositivo físico.</li>
+            </ul>
+
+            <h3>Configuración de API</h3>
+            <p>Es necesario apuntar la app al servidor backend:</p>
+            <div class="code-box">
+// Archivo: Services/Link_Api.cs
+public static class Link_Api
+{
+    // Cambia esto por la IP de tu servidor o DevTunnel
+    public static string Link_Server = "https://tu-api-url.com"; 
+}
+            </div>
+
+            <h3>Configuración Firebase</h3>
+            <p>Para que las notificaciones funcionen en Android:</p>
+            <ul>
+                <li>Colocar el archivo <code>google-services.json</code> en la ruta <code>Platforms/Android/</code>.</li>
+                <li>Verificar el package_name en <code>AndroidManifest.xml</code>.</li>
+            </ul>
+
+            <h2><i class="bi bi-folder2-open"></i> Estructura del Proyecto</h2>
+            <div class="code-box">
+AndroidAppIGBC/
+├── Clases_Api/          -> Modelos DTO compartidos.
+├── Definiciones/        -> Constantes y configs.
+├── Models/              -> Modelos SQLite y UI.
+├── Services/            -> Lógica (API, Auth, SignalR).
+├── ViewModels/          -> Lógica de presentación (MVVM).
+│   ├── ViewModelsAdm/       
+│   └── ViewModelsAprobador/ 
+├── Views/               -> Interfaz XAML.
+├── Platforms/           -> Código nativo (Android/iOS).
+└── Resources/           -> Estilos, imágenes, fuentes.
+            </div>
+
+            <h2><i class="bi bi-journal-code"></i> Notas de Desarrollo</h2>
+            <ul>
+                <li><strong>AppShell Dinámico:</strong> La app inicia en una <code>LoadingPage</code> que decide qué Shell cargar según el rol.</li>
+                <li><strong>Dev Mode:</strong> Existe una página oculta para desarrolladores para probar conexiones y bases de datos locales.</li>
+            </ul>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">RitterSonne</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // Recuperar el tema seleccionado
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>WebApi IGBC | RitterSonne</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Estilos -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <style>
+    /* Ajuste para que el menú no tape el contenido */
+    main {
+        margin-top: 100px;
+    }
+
+    .project-content {
+      background: var(--surface-color);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+    }
+    
+    .project-content h2 { 
+      margin-top: 40px; 
+      margin-bottom: 20px;
+      color: var(--accent-color); 
+      font-weight: 700;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      padding-bottom: 10px;
+    }
+    
+    .project-content h3 { 
+      margin-top: 25px; 
+      font-size: 1.3rem;
+      color: var(--heading-color); 
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-content h3 i { color: var(--accent-color); }
+
+    .tech-tag { 
+      background: color-mix(in srgb, var(--accent-color), transparent 90%); 
+      padding: 5px 12px; 
+      border-radius: 20px; 
+      color: var(--accent-color); 
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin: 3px;
+    }
+
+    .status-badge {
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    /* Colores específicos para badges de este proyecto */
+    .bg-net { background-color: #6f42c1; }      /* Morado .NET */
+    .bg-db { background-color: #0d6efd; }       /* Azul MySQL */
+    .bg-realtime { background-color: #dc3545; } /* Rojo SignalR */
+    .bg-push { background-color: #fd7e14; }     /* Naranja Firebase */
+
+    .code-box {
+        background-color: rgba(0,0,0,0.2);
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        color: var(--default-color);
+        border-left: 4px solid var(--accent-color);
+        overflow-x: auto;
+        white-space: pre-wrap; /* Mantiene saltos de línea */
+        font-size: 0.9rem;
+    }
+
+    .project-content ul { padding-left: 20px; }
+    .project-content ul li { margin-bottom: 8px; color: var(--default-color); }
+
+    /* Ajustes modo claro */
+    body.light-mode .project-content {
+        background: #ffffff;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    body.light-mode .code-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 4px solid var(--accent-color);
+    }
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+  <!-- HEADER -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">RitterSonne</h1>
+      </a>
+      <a class="btn-getstarted" href="index.html#portfolio">Volver al Portafolio</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Título Principal -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>WebApi IGBC - Backend Server</h1>
+        <p>Servicio RESTful y núcleo lógico para la gestión de datos en tiempo real</p>
+        <div class="mt-3">
+            <span class="status-badge bg-net">.NET 8.0</span>
+            <span class="status-badge bg-db">EF Core + MySQL</span>
+            <span class="status-badge bg-realtime">SignalR</span>
+            <span class="status-badge bg-push">Firebase Cloud Messaging</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido del Proyecto -->
+    <section class="section">
+      <div class="container">
+        <div class="project-content">
+            
+            <p class="lead">
+                <strong>WebApi_IGBC</strong> es un servicio RESTful desarrollado en <strong>ASP.NET Core (.NET 8)</strong> que actúa como el cerebro lógico para la aplicación móvil "Portal IGBC". Gestiona la autenticación avanzada, lógica de negocio, persistencia de datos y la orquestación de comunicaciones en tiempo real entre vendedores, aprobadores y administradores.
+            </p>
+
+            <h2><i class="bi bi-cpu"></i> Características del Sistema</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-shield-check"></i> Seguridad y Autenticación</h3>
+                    <ul>
+                        <li><strong>JWT Bearer:</strong> Emisión y validación de tokens seguros.</li>
+                        <li><strong>Device Fingerprinting:</strong> Vinculación única de usuario-dispositivo para evitar accesos no autorizados.</li>
+                        <li><strong>Middleware Personalizado:</strong> Revocación de acceso en tiempo real (lista negra de tokens).</li>
+                        <li><strong>Roles (Claims):</strong> Gestión granular de permisos (Admin, Vendedor, Aprobador).</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-broadcast"></i> Tiempo Real & Notificaciones</h3>
+                    <ul>
+                        <li><strong>SignalR Hub:</strong> Actualización instantánea de pedidos en la app móvil (WebSockets).</li>
+                        <li><strong>Firebase (FCM):</strong> Servicio integrado para envío de alertas Push de alta prioridad a Android.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3><i class="bi bi-database-check"></i> Datos y Persistencia</h3>
+                    <ul>
+                        <li><strong>MySQL & EF Core:</strong> ORM moderno con proveedor Pomelo para alto rendimiento.</li>
+                        <li><strong>Data Seeding (Bogus):</strong> Generación automática de miles de registros de prueba (Usuarios, Productos, Órdenes) al iniciar en entorno de desarrollo.</li>
+                        <li><strong>Gestión de Stock:</strong> Control transaccional de inventario.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-layers"></i> Tecnologías Utilizadas</h2>
+            <div>
+                <span class="tech-tag">ASP.NET Core 8.0</span>
+                <span class="tech-tag">Entity Framework Core 9.0</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">SignalR</span>
+                <span class="tech-tag">Swagger / OpenAPI</span>
+                <span class="tech-tag">Firebase Admin SDK</span>
+                <span class="tech-tag">Bogus</span>
+                <span class="tech-tag">BCrypt.Net</span>
+            </div>
+
+            <h2><i class="bi bi-terminal"></i> Configuración e Instalación</h2>
+            
+            <h3>1. Configuración de Base de Datos (appsettings.json)</h3>
+            <p>Asegúrate de apuntar a tu servidor MySQL local o remoto:</p>
+            <div class="code-box">
+"ConnectionStrings": {
+  "Connection": "server=localhost;port=3306;database=IGBC_Server;user=root;password=tu_password"
+}
+            </div>
+
+            <h3>2. Configuración JWT</h3>
+            <div class="code-box">
+"JWT": {
+  "Key": "TU_CLAVE_SECRETA_SUPER_SEGURA_DE_32_CHARS_MINIMO",
+  "Issuer": "https://tu-api.com",
+  "Audience": "https://tus-clientes.com"
+}
+            </div>
+
+            <h3>3. Migraciones y Ejecución</h3>
+            <p>Aplicar el esquema Code-First e iniciar el servidor:</p>
+            <div class="code-box">
+# Crear base de datos
+dotnet ef database update
+
+# Iniciar API
+dotnet run
+            </div>
+
+            <h2><i class="bi bi-folder2-open"></i> Estructura del Proyecto</h2>
+            <div class="code-box">
+WebApi_IGBC/
+├── ContextDB/       -> DbContext y configuración de EF Core.
+├── Controllers/     -> Endpoints API (Auth, Pedidos, Productos).
+├── Models/          -> Entidades de BD (Code First).
+├── ODT/             -> DTOs y Request Models.
+├── Hubs/            -> Lógica de SignalR (WebSockets).
+├── Middleware/      -> Interceptores de seguridad HTTP.
+├── Services/        -> Lógica externa (Firebase NotificationService).
+└── Utils/           -> Constantes globales.
+            </div>
+
+            <h2><i class="bi bi-journal-code"></i> Documentación y Pruebas</h2>
+            <p>Al iniciar en modo <strong>Development</strong>, Swagger UI estará disponible en <code>/swagger/index.html</code>.</p>
+            
+            <h3>Usuarios de Prueba (Seeding)</h3>
+            <p>Si la base de datos está vacía, el sistema generará estos usuarios (Pass: 12345678):</p>
+            <ul>
+                <li><strong>Admin:</strong> PruebaAdm@gmail.com</li>
+                <li><strong>Aprobador:</strong> PruebaApro@gmail.com</li>
+                <li><strong>Vendedor:</strong> PruebaVen1@gmail.com</li>
+            </ul>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">RitterSonne</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // Recuperar el tema seleccionado
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+
+</body>
+</html>
