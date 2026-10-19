@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>E-commerce Supermercado | RitterSonne</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Estilos -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Ajuste para que el menú no tape el contenido */
+    main {
+        margin-top: 100px;
+    }
+
+    .project-content {
+      background: var(--surface-color);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+    }
+
+    .project-content h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+      font-weight: 700;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      padding-bottom: 10px;
+    }
+
+    .project-content h3 {
+      margin-top: 25px;
+      font-size: 1.3rem;
+      color: var(--heading-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-content h3 i { color: var(--accent-color); }
+
+    .tech-tag {
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      padding: 5px 12px;
+      border-radius: 20px;
+      color: var(--accent-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin: 3px;
+    }
+
+    .status-badge {
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    /* Colores específicos para badges de este proyecto */
+    .bg-net { background-color: #512BD4; }      /* Morado .NET */
+    .bg-pg { background-color: #4169E1; }       /* Azul PostgreSQL */
+    .bg-react { background-color: #087ea4; }    /* Azul React */
+    .bg-docker { background-color: #2496ED; }   /* Azul Docker */
+
+    .code-box {
+        background-color: rgba(0,0,0,0.2);
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        color: var(--default-color);
+        border-left: 4px solid var(--accent-color);
+        overflow-x: auto;
+        white-space: pre;
+        font-size: 0.9rem;
+    }
+
+    .repo-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        border-radius: 50px;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .repo-btn:hover {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    .screenshot {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .screenshot-caption {
+        font-size: 0.9rem;
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        line-height: 1;
+    }
+
+    .project-content ul { padding-left: 20px; }
+    .project-content ul li { margin-bottom: 8px; color: var(--default-color); }
+
+    /* Ajustes modo claro */
+    body.light-mode .project-content {
+        background: #ffffff;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    body.light-mode .code-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 4px solid var(--accent-color);
+    }
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+  <!-- HEADER -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">RitterSonne</h1>
+      </a>
+      <a class="btn-getstarted" href="index.html#portfolio">Volver al Portafolio</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Título Principal -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Sistema E-commerce para Supermercado</h1>
+        <p>Tienda en línea, gestión de pedidos, inventario, entregas y analítica de negocio</p>
+        <div class="mt-3">
+            <span class="status-badge bg-net">.NET 10</span>
+            <span class="status-badge bg-pg">PostgreSQL 15</span>
+            <span class="status-badge bg-react">React 19</span>
+            <span class="status-badge bg-docker">Docker Compose</span>
+        </div>
+        <div class="mt-4">
+            <a href="https://github.com/FranciscoSanchez001/Backend_Almacen" target="_blank" rel="noopener" class="repo-btn"><i class="bi bi-github"></i> Ver código en GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido del Proyecto -->
+    <section class="section">
+      <div class="container">
+        <div class="project-content">
+
+            <p class="lead">
+                Plataforma de comercio electrónico completa para un supermercado: los clientes compran en línea con precios en <strong>USD y bolívares</strong> según la tasa del día, y el personal gestiona cada pedido desde su recepción hasta la entrega. Está compuesta por una <strong>API REST en ASP.NET Core 10</strong> con <strong>Onion Architecture</strong> sobre PostgreSQL, una <strong>SPA en React 19</strong> y un servicio de notificaciones por <strong>WhatsApp</strong>.
+            </p>
+
+            <div class="row text-center g-4 mt-2">
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">505</div>
+                    <div>pruebas automatizadas</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">4</div>
+                    <div>roles de usuario</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">4</div>
+                    <div>capas (Onion)</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">CI/CD</div>
+                    <div>GitHub Actions</div>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-images"></i> Capturas</h2>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <img src="assets/img/almacen/catalogo.png" class="screenshot" alt="Catálogo de productos de la tienda" loading="lazy">
+                    <p class="screenshot-caption">Catálogo público con precios en USD y Bs.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/img/almacen/dashboard_kpi.png" class="screenshot" alt="Dashboard de KPIs del administrador" loading="lazy">
+                    <p class="screenshot-caption">Dashboard de KPIs con informes en Excel y PDF</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/img/almacen/pedidos_ventas.png" class="screenshot" alt="Bandeja de pedidos del área de ventas" loading="lazy">
+                    <p class="screenshot-caption">Bandeja de pedidos del área de ventas</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/img/almacen/whatsapp.png" class="screenshot" alt="Vinculación de WhatsApp con código QR" loading="lazy">
+                    <p class="screenshot-caption">Vinculación de WhatsApp por código QR</p>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-cpu"></i> Características del Sistema</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-cart-check"></i> Pedidos e Inventario</h3>
+                    <ul>
+                        <li><strong>Pagos locales:</strong> Transferencia, pago móvil o Binance con comprobante adjunto.</li>
+                        <li><strong>Reserva de stock:</strong> Se reserva al crear el pedido y se libera automáticamente si se rechaza o expira.</li>
+                        <li><strong>Ciclo de vida:</strong> Pendiente → Aprobado → Asignado → En camino → Entregado.</li>
+                        <li><strong>Job de expiración:</strong> Servicio en segundo plano que vence los pedidos sin revisión.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-truck"></i> Logística y Notificaciones</h3>
+                    <ul>
+                        <li><strong>Área del repartidor:</strong> Pensada para el celular, con Google Maps, llamada y WhatsApp al cliente.</li>
+                        <li><strong>WhatsApp (Baileys):</strong> Servicio Node.js que avisa al cliente cuando se aprueba su compra y cuando va en camino.</li>
+                        <li><strong>Vinculación por QR:</strong> El gerente conecta el teléfono de la tienda desde el panel.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-shield-check"></i> Seguridad</h3>
+                    <ul>
+                        <li><strong>JWT + Refresh Tokens:</strong> Firmados con HMAC-SHA256 y con rotación.</li>
+                        <li><strong>RBAC:</strong> Roles superadmin, ventas, repartidor y cliente, validados en cada endpoint.</li>
+                        <li><strong>Google Sign-In</strong> para clientes y <strong>BCrypt</strong> para el personal.</li>
+                        <li><strong>Errores RFC 7807:</strong> Respuestas estandarizadas con Problem Details.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-graph-up-arrow"></i> Analítica y Auditoría</h3>
+                    <ul>
+                        <li><strong>Dashboard de KPIs:</strong> Ventas, ticket promedio, horas pico, zonas, rotación y ocupación del almacén.</li>
+                        <li><strong>Comportamiento de visitantes:</strong> Búsquedas, embudo de compra y abandono de carrito.</li>
+                        <li><strong>Reportes:</strong> Exportación a Excel (ClosedXML) y PDF (QuestPDF).</li>
+                        <li><strong>Auditoría</strong> de todos los cambios relevantes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-diagram-3"></i> Arquitectura</h2>
+            <p>Las dependencias apuntan siempre hacia el dominio; la regla se verifica automáticamente con pruebas de arquitectura (NetArchTest).</p>
+            <div class="code-box">
+Frontend   React 19 + Vite + Tailwind CSS
+              │  HTTP / JSON (Bearer JWT)
+              ▼
+Presentation.API   Controladores REST, JWT + RBAC, RFC 7807
+Infrastructure     EF Core 10 + Npgsql, Unit of Work, Excel, WhatsApp
+Core.Application   Casos de uso, contratos, FluentValidation
+Core.Domain        Entidades y reglas de negocio
+              │
+              ▼
+        PostgreSQL 15
+            </div>
+
+            <h2><i class="bi bi-check2-circle"></i> Calidad y DevOps</h2>
+            <ul>
+                <li><strong>Pruebas backend:</strong> Unitarias (xUnit + Moq), de arquitectura (NetArchTest) e integración contra PostgreSQL real (Testcontainers).</li>
+                <li><strong>Pruebas frontend:</strong> 455 pruebas con Vitest y React Testing Library.</li>
+                <li><strong>Docker multietapa:</strong> Imagen de la API en Alpine con usuario sin privilegios (de 243 MB a 155 MB).</li>
+                <li><strong>CI/CD:</strong> Pipeline en GitHub Actions; despliegue en Railway (API), Vercel (SPA) y Neon (PostgreSQL).</li>
+            </ul>
+
+            <h2><i class="bi bi-layers"></i> Tecnologías Utilizadas</h2>
+            <div>
+                <span class="tech-tag">.NET 10 / C# 14</span>
+                <span class="tech-tag">ASP.NET Core Web API</span>
+                <span class="tech-tag">Entity Framework Core 10</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">FluentValidation</span>
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">Tailwind CSS 4</span>
+                <span class="tech-tag">Recharts</span>
+                <span class="tech-tag">Node.js + Baileys</span>
+                <span class="tech-tag">xUnit</span>
+                <span class="tech-tag">Testcontainers</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">GitHub Actions</span>
+            </div>
+
+            <h2><i class="bi bi-terminal"></i> Puesta en Marcha</h2>
+            <div class="code-box">
+git clone https://github.com/FranciscoSanchez001/Backend_Almacen.git
+cd Backend_Almacen
+docker compose up -d --build
+            </div>
+            <p class="mt-2">La tienda queda disponible en <code>http://localhost:8080</code> y la API en <code>http://localhost:5000</code>.</p>
+
+            <hr class="mt-5 mb-4">
+
+            <div class="text-center text-muted fst-italic">
+                <p class="small">Desarrollo de Aplicaciones Web · UNET 2026 - Desarrollado por Gregorio Briceño, Francisco Sánchez y María Fernanda Cachopo Rojas</p>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">RitterSonne</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Recuperar el tema seleccionado
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+
+</body>
+</html>

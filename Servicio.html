@@ -101,6 +101,22 @@
         border: 1px solid #e9ecef;
         border-left: 4px solid var(--accent-color);
     }
+
+    .repo-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        border-radius: 50px;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .repo-btn:hover {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+    }
   </style>
 </head>
 
@@ -127,6 +143,9 @@
             <span class="status-badge bg-laravel">Laravel 12.x</span>
             <span class="status-badge bg-php">PHP 8.2+</span>
             <span class="status-badge bg-tailwind">Tailwind CSS 4.x</span>
+        </div>
+        <div class="mt-4">
+            <a href="https://github.com/GregorioBrc/servicio_estudiantina" target="_blank" rel="noopener" class="repo-btn"><i class="bi bi-github"></i> Ver código en GitHub</a>
         </div>
       </div>
     </div>
@@ -177,8 +196,8 @@
             
             <h3>1. Clonar y Configurar</h3>
             <div class="code-box">
-git clone https://github.com/tu-usuario/sistema-partituras-unet.git
-cd sistema-partituras-unet
+git clone https://github.com/GregorioBrc/servicio_estudiantina.git
+cd servicio_estudiantina
             </div>
 
             <h3>2. Dependencias (Backend & Frontend)</h3>
