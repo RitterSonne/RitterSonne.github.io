@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Panadería SaaS | RitterSonne</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Estilos -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Ajuste para que el menú no tape el contenido */
+    main {
+        margin-top: 100px;
+    }
+
+    .project-content {
+      background: var(--surface-color);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+    }
+
+    .project-content h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+      font-weight: 700;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      padding-bottom: 10px;
+    }
+
+    .project-content h3 {
+      margin-top: 25px;
+      font-size: 1.3rem;
+      color: var(--heading-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-content h3 i { color: var(--accent-color); }
+
+    .tech-tag {
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      padding: 5px 12px;
+      border-radius: 20px;
+      color: var(--accent-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin: 3px;
+    }
+
+    .status-badge {
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    /* Colores específicos para badges de este proyecto */
+    .bg-flutter { background-color: #02569B; }    /* Azul Flutter */
+    .bg-supabase { background-color: #3ECF8E; }   /* Verde Supabase */
+    .bg-powersync { background-color: #6c757d; }  /* Gris */
+    .bg-wip { background-color: #e3a127; }        /* Dorado: en desarrollo */
+
+    .code-box {
+        background-color: rgba(0,0,0,0.2);
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        color: var(--default-color);
+        border-left: 4px solid var(--accent-color);
+        overflow-x: auto;
+        white-space: pre;
+        font-size: 0.9rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        line-height: 1;
+    }
+
+    .phase-tag {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-left: 4px;
+    }
+    .phase-now { background-color: #e3a127; color: #1a1a1a; }
+
+    .project-content ul { padding-left: 20px; }
+    .project-content ul li { margin-bottom: 8px; color: var(--default-color); }
+
+    /* Ajustes modo claro */
+    body.light-mode .project-content {
+        background: #ffffff;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    body.light-mode .code-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 4px solid var(--accent-color);
+    }
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+  <!-- HEADER -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">RitterSonne</h1>
+      </a>
+      <a class="btn-getstarted" href="index.html#portfolio">Volver al Portafolio</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Título Principal -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Panadería SaaS</h1>
+        <p>Sistema de gestión para panaderías: multiempresa, multi-dispositivo y offline-first</p>
+        <div class="mt-3">
+            <span class="status-badge bg-flutter">Flutter · Dart</span>
+            <span class="status-badge bg-supabase">Supabase · PostgreSQL</span>
+            <span class="status-badge bg-powersync">PowerSync</span>
+            <span class="status-badge bg-wip">En desarrollo activo</span>
+        </div>
+        <div class="mt-4">
+            <span class="repo-private"><i class="bi bi-lock-fill"></i> Repositorio privado · Proyecto freelance</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido del Proyecto -->
+    <section class="section">
+      <div class="container">
+        <div class="project-content">
+
+            <p class="lead">
+                Sistema de gestión para panaderías vendido como <strong>suscripción mensual</strong>, que funciona <strong>sin internet</strong> en cada dispositivo y se sincroniza con la nube cuando hay conexión. Cubre inventario, recetas y costos, producción, ventas y facturación, clientes y crédito, caja, distribuidores con GPS y la supervisión del gerente desde el móvil. Una sola base de código en Flutter para <strong>Windows, Android e iOS</strong>, y un solo servidor para todas las panaderías (<strong>multi-tenant</strong>).
+            </p>
+
+            <div class="row text-center g-4 mt-2">
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">13</div>
+                    <div>módulos de negocio</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">~50</div>
+                    <div>tablas diseñadas</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">5</div>
+                    <div>roles con permisos</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">4</div>
+                    <div>fases de entrega</div>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-compass"></i> Principios de Diseño</h2>
+            <ul>
+                <li><strong>Offline-first:</strong> Cada dispositivo trabaja contra su base local. La nube nunca es requisito para vender, facturar o mover inventario.</li>
+                <li><strong>Multi-dispositivo:</strong> Caja, tablet, móvil del gerente y móvil del distribuidor se sincronizan a través del servidor; los dispositivos no se hablan entre sí.</li>
+                <li><strong>Eventos antes que saldos:</strong> Inventario, caja y cuentas por cobrar se guardan como movimientos inmutables y los saldos se calculan. Así la sincronización no genera conflictos.</li>
+                <li><strong>Nada fiscal se edita:</strong> Una factura emitida no se modifica; se anula o se corrige con nota de crédito.</li>
+                <li><strong>El servidor no rechaza hechos físicos:</strong> Un pan vendido offline ya se vendió. Si rompe una regla, se acepta y se marca como alerta para el gerente.</li>
+                <li><strong>Licencia verificable offline:</strong> Token firmado (Ed25519) con vencimiento, periodo de gracia y modo solo lectura. Los datos del cliente nunca se secuestran.</li>
+            </ul>
+
+            <h2><i class="bi bi-cpu"></i> Arquitectura y Decisiones Técnicas</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-buildings"></i> Multiempresa Segura</h3>
+                    <ul>
+                        <li><strong>Row Level Security:</strong> Toda tabla lleva <code>tenant_id</code> y políticas RLS; una empresa nunca ve los datos de otra.</li>
+                        <li><strong>Claims en el JWT:</strong> Un <em>Custom Access Token Hook</em> inyecta empresa, rol y sucursales en el token.</li>
+                        <li><strong>Alta de empresas:</strong> Registro con creación de dueño, sucursal y periodo de prueba de 14 días.</li>
+                        <li><strong>Tests pgTAP:</strong> Pruebas automáticas del aislamiento entre empresas directamente en PostgreSQL.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-wifi-off"></i> Offline-First</h3>
+                    <ul>
+                        <li><strong>PowerSync:</strong> Base de datos local en cada equipo sincronizada con Supabase.</li>
+                        <li><strong>IDs generados en el dispositivo:</strong> UUIDv7 ordenables y UUIDv5 deterministas para evitar duplicados entre equipos sin conexión.</li>
+                        <li><strong>PIN de caja offline:</strong> Hash PBKDF2 calculado en el equipo para validar al cajero sin internet.</li>
+                        <li><strong>Borrado lógico</strong> con <code>deleted_at</code> para no perder historial.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-cash-coin"></i> Dominio Financiero Preciso</h3>
+                    <ul>
+                        <li><strong>Dinero con <code>Decimal</code>,</strong> nunca <code>double</code>: montos a 2 decimales, costos y cantidades a 4, tasas a 6.</li>
+                        <li><strong>Bimoneda:</strong> Manejo de monedas y tasas de cambio.</li>
+                        <li><strong>Paquete <code>core</code> en Dart puro:</strong> Dinero, monedas, unidades e IDs, sin dependencias de base de datos ni red, totalmente testeable.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-check2-circle"></i> Calidad y Proceso</h3>
+                    <ul>
+                        <li><strong>CI con GitHub Actions:</strong> Análisis estático con <code>--fatal-infos</code> y tests en cada cambio.</li>
+                        <li><strong>Migraciones SQL versionadas</strong> con la CLI de Supabase.</li>
+                        <li><strong>Monitoreo de errores</strong> con Sentry y configuración por entorno.</li>
+                        <li><strong>Scrum con Jira:</strong> Cada commit referencia su historia (<code>SCRUM-14: ...</code>).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-diagram-3"></i> Lógica de Negocio</h2>
+            <p>Toda regla vive en el paquete <code>core</code> y se ejecuta dos veces: en el dispositivo para responder al instante sin internet, y en el servidor al sincronizar.</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-box-seam"></i> Inventario y Recetas</h3>
+                    <ul>
+                        <li><strong>Existencia = suma de movimientos:</strong> Dos cajas vendiendo offline no generan conflicto; sus movimientos simplemente se suman.</li>
+                        <li><strong>Costo promedio ponderado</strong> calculado al recibir cada compra.</li>
+                        <li><strong>Recetas versionadas</strong> con productos intermedios (costo recursivo, validación de ciclos) y precio sugerido por margen objetivo.</li>
+                        <li><strong>Alerta de margen:</strong> Cuando sube un insumo se recalculan los costos y se avisa qué productos quedaron por debajo del margen.</li>
+                        <li><strong>Días de cobertura</strong> de materia prima según el consumo de las últimas 2 semanas.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-receipt"></i> Ventas, Crédito y Caja</h3>
+                    <ul>
+                        <li><strong>Pagos mixtos</strong> en varias monedas; la tasa de cambio se congela al emitir.</li>
+                        <li><strong>Series de facturación por dispositivo</strong> con reserva de bloques para no agotarse offline.</li>
+                        <li><strong>Crédito configurable</strong> con abonos parciales repartidos del pedido más antiguo al más nuevo, antigüedad de deuda y bloqueo automático.</li>
+                        <li><strong>Cierre de caja ciego:</strong> El cajero cuenta sin ver el esperado; la diferencia se notifica al gerente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="bi bi-calendar-week"></i> Pedidos y Producción</h3>
+                    <ul>
+                        <li><strong>Tabla semanal tipo hoja de cálculo:</strong> Clientes en filas, días en columnas, con navegación por teclado como en Excel.</li>
+                        <li><strong>Pedidos recurrentes</strong> generados desde plantillas, con IDs deterministas (UUIDv5) para que dos equipos offline no los dupliquen.</li>
+                        <li><strong>Sugerencia de producción</strong> a partir de pedidos confirmados y del promedio de venta del mismo día en las últimas 4 semanas.</li>
+                        <li><strong>Devoluciones</strong> con motivo, compensación (nota de crédito o reposición) y destino del pan.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="bi bi-geo-alt"></i> Distribución y GPS</h3>
+                    <ul>
+                        <li><strong>Jornada del distribuidor:</strong> Carga del camión, ventas en ruta, sobrante, devoluciones y liquidación del efectivo con cálculo de comisión.</li>
+                        <li><strong>GPS por lotes</strong> con cola local y claves que evitan duplicados al reenviar.</li>
+                        <li><strong>Geocercas:</strong> Visitas automáticas y alertas por parada omitida o salida de ruta.</li>
+                        <li><strong>Privacidad:</strong> Fuera de la jornada no se registra ubicación.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2><i class="bi bi-people"></i> Roles y Sincronización</h2>
+            <p>Los permisos se aplican en tres capas: la interfaz oculta lo que no corresponde, las reglas de sincronización impiden que el dato llegue al dispositivo y el servidor rechaza escrituras no permitidas.</p>
+            <ul>
+                <li><strong>Dueño:</strong> Todo, incluidas suscripción, usuarios y dispositivos.</li>
+                <li><strong>Gerente:</strong> Precios, recetas, ajustes de inventario, anulaciones y excepciones de crédito.</li>
+                <li><strong>Cajero:</strong> Vender, cobrar y manejar la caja; no recibe costos ni márgenes.</li>
+                <li><strong>Panadero:</strong> Producción, mermas y recetas sin costos.</li>
+                <li><strong>Distribuidor:</strong> Solo su ruta del día, sus clientes con saldo y la existencia del camión.</li>
+            </ul>
+            <p>Los dispositivos guardan solo los últimos 60 a 90 días de historia para que una tablet modesta no se llene, y el cambio de cajero se hace con PIN sin cerrar la sesión del equipo.</p>
+
+            <h2><i class="bi bi-signpost-split"></i> Plan por Fases</h2>
+            <ul>
+                <li><strong>Fase 0 · Fundaciones</strong> <span class="phase-tag phase-now">en curso</span>: workspace, CI, esquema multiempresa con RLS, autenticación con empresa y rol en el JWT, PIN offline y esqueleto de la app con navegación por rol.</li>
+                <li><strong>Fase 1 · Producto vendible:</strong> Pedidos semanales y recurrentes, producción diaria, materia prima con alertas, deudas y abonos, KPIs, clientes al mayor y al detal, devoluciones, liquidación de distribuidores, venta de mostrador y caja.</li>
+                <li><strong>Fase 2 · Supervisión:</strong> Panel móvil del gerente y panel web.</li>
+                <li><strong>Fase 3 · Distribución en ruta:</strong> App del distribuidor con GPS y geocercas.</li>
+            </ul>
+
+            <h2><i class="bi bi-folder2-open"></i> Estructura del Proyecto</h2>
+            <p>Monorepo organizado como <em>workspace</em> de Dart: un solo <code>flutter pub get</code> resuelve la app y los paquetes.</p>
+            <div class="code-box">
+Panaderia_SaaS/
+├── panaderia_saas/        App Flutter (Windows, Android, iOS)
+│   └── lib/
+│       ├── core/          Configuración, tema y UI compartida
+│       ├── data/          Repositorios y base de datos local
+│       ├── features/      Autenticación, inicio, ajustes, shell
+│       └── routing/       Navegación adaptable por rol (go_router)
+├── packages/core/         Dart puro: dinero, monedas, unidades, IDs
+├── supabase/
+│   ├── migrations/        SQL versionado (tablas, RLS, funciones)
+│   └── tests/database/    Tests pgTAP de aislamiento entre empresas
+└── .github/workflows/     CI: análisis y tests
+            </div>
+
+            <h2><i class="bi bi-layers"></i> Tecnologías Utilizadas</h2>
+            <div>
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">Riverpod</span>
+                <span class="tech-tag">go_router</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">PostgreSQL + RLS</span>
+                <span class="tech-tag">PowerSync</span>
+                <span class="tech-tag">pgTAP</span>
+                <span class="tech-tag">Sentry</span>
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Jira / Scrum</span>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">RitterSonne</strong> <span>Todos los derechos reservados</span></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Recuperar el tema seleccionado
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+
+</body>
+</html>
